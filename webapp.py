@@ -17,6 +17,7 @@ import hola
 import suma
 import adios
 
+
 class app:
     """Application to which webApp dispatches. Does the real work
     Usually real applications inherit from this class, and redefine
@@ -53,7 +54,7 @@ class webApp:
         in the request, return the class in the app hierarchy to be
         invoked. If prefix is not found, return app class
         """
-        
+
         resource = request.split(' ', 2)[1]
 
         for prefix in self.apps.keys():
@@ -66,7 +67,7 @@ class webApp:
 
     def __init__(self, hostname, port, apps):
         """Initialize the web application."""
-        
+
         self.apps = apps
         self.myApp = app()
 
@@ -96,7 +97,7 @@ class webApp:
             recvSocket.close()
 
 if __name__ == "__main__":
-    
+
     anApp = app()
     otherApp = app()
     aleatApp = aleat.aleat()
@@ -105,7 +106,7 @@ if __name__ == "__main__":
     sumaApp = suma.suma()
     testWebApp = webApp("localhost", 1234, {'/app': anApp,
                                             '/other': otherApp,
-                                            '/aleat':aleatApp,
-                                            '/suma':sumaApp,
-					    '/hola':holaApp,
-                                            '/adios':adiosApp})
+                                            '/aleat': aleatApp,
+                                            '/suma': sumaApp,
+					                        '/hola': holaApp,
+                                            '/adios': adiosApp})
