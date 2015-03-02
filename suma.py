@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-class suma():
 
+class suma():
 
     def parse(self, request, rest):
         try:
